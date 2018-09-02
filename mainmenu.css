@@ -19,7 +19,7 @@
 .menuminwidth0 {             /* for all browsers (non-IE) that obey min-width */
 	position:relative;
 	border:0;
-	margin:10px;
+	margin:0;
 	padding:0;
 	width:100%;
 	height:55px;/* 36px masthead height + 18px button height + 1px lower border*/
@@ -147,13 +147,13 @@
 .menu {
 	position:relative;        /* establish a menu-relative positioning context */
 	float:left;                                     /* play nicely with others */
-	margin:10px;
-	padding:10px;
-	border:10px;
+	margin:0;
+	padding:0;
+	border:0;
 	height:18px;                                  /* the menu's overall height */
 	width:100%;         /* we always want our menu to fill the available space */
 	background:#000000;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-family: Monospace, Monospace, sans-serif;
 	font-size:12px;         /* this (and also below) sets the menu's font size */
 	border-bottom:1px solid black;        /* give us a black border underneath */
 }
