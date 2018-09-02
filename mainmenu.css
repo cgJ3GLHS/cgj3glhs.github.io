@@ -244,7 +244,7 @@
 	height:auto;      /* the drop-down height will be determiend by line count */
 	width:13.5em;
 	color:white;                        /* this sets the unselected-text color */
-	background:black;         /* this sets our menu's effective "border" color */
+	background:#505050;         /* this sets our menu's effective "border" color */
 }
 
 .menu ul li:hover ul.leftbutton,
