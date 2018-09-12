@@ -22,6 +22,26 @@
       </ul>
     </div>
     <br><br><br>
+    <h2>2018-09-12 - Second Session</h2>
+    <p>Today I spent more time off-book searching and reading about questions that came up that weren't explained in the book's material.  The book is good, but very focused on exam material so I had to look outside for some other sources to get a little more context about concepts that weren't explained in the book.</p>
+    <p>The remainder of the book material dealt with two concepts.  The first was booleans which are predefined sets of policy features that can be quickly turned on and off.  These policy groups can be toggled temporarily or more permanantly with some simple commands.  There are a lot of these, but one of the status commands at least gives a nice description as to what they do.  Searching through those descriptions would let a person narrow down at least to a few sets of policies dealing with the area they are interested in.  I suspect this is more commonly used than the individual tags.  I need to look and see if there is a way to map these boolean policy groups to individual tags.</p>
+    <p>The second concept was about diagnosing and addressing policy violations.  It described how to find SELinux entries in the log, as well as a troubleshooting package that writes additional information to /var/log/messages.  Somehow they don't print out as nicely in my terminal as they do in the book.  At the start of the text blob is a message saying to run sealert -l [some uuid] to get complete information.  Running this gives a much nicer-formatted output along with additional info to what is in the book listing.</p>
+    <p>Outside the book one of the questions that I looked into was the s0 entries at the end of each label.  It turns out that they are called sensitivity and there is another type as well called category levels (they look like s0, s3, c0, c3, etc.)  Still after reading that I was unclear on what they do, as the document mentioned they were involved with some things called MLS and MCS.  After digging some more I see that they are used for two different enhancement packages for SELinux called MCS and MLS, which stand for Multi Category Security and Multi Level Security.  So this explains why all these basic exercises show s0 for everything since the material that I'm looking at doesn't involve these packages.</p>
+    <ul>
+      <li>https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/security-enhanced_linux/chap-security-enhanced_linux-selinux_contexts</li>
+      <li>https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/5/html/deployment_guide/sec-mcs-ov</li>
+      <li>https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/selinux_users_and_administrators_guide/mls</li>
+    </ul>
+    
+    <p>Another item that I looked into was the question of how these labels interact with remote shares like NFS.  How, in that situation do two different systems manage their labels?</p>
+    <ul>
+      <li>https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/selinux_users_and_administrators_guide/sect-security-enhanced_linux-working_with_selinux-mounting_file_systems</li>
+    </ul>
+    <p>They mention:
+In this example, server:/export/web is mounted locally to the /local/web/ directory, with all files being labeled with the httpd_sys_content_t type, allowing Apache HTTP Server access. server:/export/database is mounted locally to /local/database/, with all files being labeled with the mysqld_db_t type, allowing MariaDB access. These type changes are not written to disk.</p>
+<p>So sounds like the labeling is not written back to the file on an nfs share.</p>
+
+    
     <h2>2018-09-05 - First Session Progress</h2>
     <p>Today I read through the first few sections of the van Vugt book.  Covered some definitions, how to enable/disable the whole SELinux system, both temporarily and from startup.  Next was a more in-depth look at context settings including how to view them, the notation of what they mean, how to change the type tags in the policy and applying that policy to the files which takes the tags defined in the policy and sets them in the files.</p>
     <p>The content so far focused more on setting the type tags than listing the different type tags and what they mean, but did include some info about looking up the different ones in man.  I may need to go looking for some list of the most common ones or something like that to get familiar with at least some key subset and get an idea about how they are classified.</p>
