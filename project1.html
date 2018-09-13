@@ -28,18 +28,22 @@
     <p>The second concept was about diagnosing and addressing policy violations.  It described how to find SELinux entries in the log, as well as a troubleshooting package that writes additional information to /var/log/messages.  Somehow they don't print out as nicely in my terminal as they do in the book.  At the start of the text blob is a message saying to run sealert -l [some uuid] to get complete information.  Running this gives a much nicer-formatted output along with additional info to what is in the book listing.</p>
     <p>Outside the book one of the questions that I looked into was the s0 entries at the end of each label.  It turns out that they are called sensitivity and there is another type as well called category levels (they look like s0, s3, c0, c3, etc.)  Still after reading that I was unclear on what they do, as the document mentioned they were involved with some things called MLS and MCS.  After digging some more I see that they are used for two different enhancement packages for SELinux called MCS and MLS, which stand for Multi Category Security and Multi Level Security.  So this explains why all these basic exercises show s0 for everything since the material that I'm looking at doesn't involve these packages.</p>
     <ul>
-      <li>https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/security-enhanced_linux/chap-security-enhanced_linux-selinux_contexts</li>
-      <li>https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/5/html/deployment_guide/sec-mcs-ov</li>
-      <li>https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/selinux_users_and_administrators_guide/mls</li>
+      <li><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/security-enhanced_linux/chap-security-enhanced_linux-selinux_contexts">https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/security-enhanced_linux/chap-security-enhanced_linux-selinux_contexts</a></li>
+      <li><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/5/html/deployment_guide/sec-mcs-ov">https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/5/html/deployment_guide/sec-mcs-ov</a></li>
+      <li><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/selinux_users_and_administrators_guide/mls">https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/selinux_users_and_administrators_guide/mls</a></li>
     </ul>
     
     <p>Another item that I looked into was the question of how these labels interact with remote shares like NFS.  How, in that situation do two different systems manage their labels?</p>
     <ul>
-      <li>https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/selinux_users_and_administrators_guide/sect-security-enhanced_linux-working_with_selinux-mounting_file_systems</li>
+      <li><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/selinux_users_and_administrators_guide/sect-security-enhanced_linux-working_with_selinux-mounting_file_systems">https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/selinux_users_and_administrators_guide/sect-security-enhanced_linux-working_with_selinux-mounting_file_systems</a></li>
     </ul>
-    <p>They mention:
-In this example, server:/export/web is mounted locally to the /local/web/ directory, with all files being labeled with the httpd_sys_content_t type, allowing Apache HTTP Server access. server:/export/database is mounted locally to /local/database/, with all files being labeled with the mysqld_db_t type, allowing MariaDB access. These type changes are not written to disk.</p>
-<p>So sounds like the labeling is not written back to the file on an nfs share.</p>
+    <p>They mention:<br/>
+    In this example, server:/export/web is mounted locally to the /local/web/ directory, with all files being labeled with the httpd_sys_content_t type, allowing Apache HTTP Server access. server:/export/database is mounted locally to /local/database/, with all files being labeled with the mysqld_db_t type, allowing MariaDB access. These type changes are not written to disk.</p>
+    <p>So sounds like the labeling is perhaps not written back to the file on an nfs share?  Need to find some more sources of informaiton on this.</p>
+
+    <p>Finally, I came across this talk on SELinux from Red Hat's Thomas Cameron.  I've been to some of his talks before and he's a great presenter, so need to watch this one and see if he has any additional insights or comes at it from another angle <a href="https://www.youtube.com/watch?v=cNoVgDqqJmM">https://www.youtube.com/watch?v=cNoVgDqqJmM</a></p>
+
+    <p>Generally I've been noticing that when I have a question about how some aspect of it works or relates, the Red Hat documentation has been where I ultimately find the answer.  Not always in the place or under the heading I expect or first seem to look, but the documentation does seem to be very good.</p>
 
     
     <h2>2018-09-05 - First Session Progress</h2>
