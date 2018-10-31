@@ -72,21 +72,28 @@
     <ul>
       <li><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/selinux_users_and_administrators_guide/sect-security-enhanced_linux-working_with_selinux-mounting_file_systems">https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/selinux_users_and_administrators_guide/sect-security-enhanced_linux-working_with_selinux-mounting_file_systems</a></li>
     </ul>
+    
     <p>They mention:<br/>
     "In this example, server:/export/web is mounted locally to the /local/web/ directory, with all files being labeled with the httpd_sys_content_t type, allowing Apache HTTP Server access. server:/export/database is mounted locally to /local/database/, with all files being labeled with the mysqld_db_t type, allowing MariaDB access. These type changes are not written to disk."</p>
+    
     <p>So sounds like the labeling is perhaps not written back to the file on an nfs share?  Need to find some more sources of information on this.</p>
-
+    
     <p>Finally, I came across this talk on SELinux from Red Hat's Thomas Cameron.  I've been to some of his talks before and he's a great presenter, so need to watch this one and see if he has any additional insights or comes at it from another angle <a href="https://www.youtube.com/watch?v=cNoVgDqqJmM">https://www.youtube.com/watch?v=cNoVgDqqJmM</a></p>
 
     <p>Generally I've been noticing that when I have a question about how some aspect of it works or relates, the Red Hat documentation has been where I ultimately find the answer.  Not always in the place or under the heading I expect or first seem to look, but the documentation does seem to be very good.</p>
-
     
     <h2>2018-09-05 - First Session Progress</h2>
+    
     <p>Today I read through the first few sections of the van Vugt book.  Covered some definitions, how to enable/disable the whole SELinux system, both temporarily and from startup.  Next was a more in-depth look at context settings including how to view them, the notation of what they mean, how to change the type tags in the policy and applying that policy to the files which takes the tags defined in the policy and sets them in the files.</p>
+    
     <p>The content so far focused more on setting the type tags than listing the different type tags and what they mean, but did include some info about looking up the different ones in man.  I may need to go looking for some list of the most common ones or something like that to get familiar with at least some key subset and get an idea about how they are classified.</p>
+    
     <p>Another thing I need to look up is what the :s0 notation is at the end of the context label.  It is there in all of the examples but not really explained as he is staying focused on the type tags, so I need to look that up.</p>
+    
     <p>One unexpected offshoot was in one of the exercises he has us use the elinks browser which is apparently an offshoot of lynx.  Years ago I wanted to get comfortable with lynx but the version packaged with my system had problems running.  Elinks seems to run fine though, so I can keep that around to play with later.</p>
+    
     <p>At the end of the section a question that bothered me was where are all these labels stored, which could be important when it comes to things like backing up.  That led me to find this discussion where someone was wondering the same thing regarding SELinux and rsync: <a href="https://forums.fedoraforum.org/showthread.php?276028-SELinux-how-where-labels-stored-securing-rsync-backup">https://forums.fedoraforum.org/showthread.php?276028-SELinux-how-where-labels-stored-securing-rsync-backup</a></p>
+    
     <p>The takeaway for my question was that the labels are stored with the file as an attribute.  The discussion also had a good point about what those labels mean when it comes to the backup/storage system which may require a different policy.  That leads to the question of policy storage which I found some answers to here: <a href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/rhlcommon-chapter-0001.html">https://www.centos.org/docs/5/html/Deployment_Guide-en-US/rhlcommon-chapter-0001.html</a> That page described the locations where the policy information is stored.  Given the Van Vugt book's emphasis on the policy being the master I think it would make the most sense to back up both the files and the policy, and not treat the labels on the files as definitive, but instead reapply the policy after a restore.  That would also allow a different policy to be applied on the backup storage server.</p>
     
     <h2>2018-09-05 - Identifying Technology Learning Blogs</h2>
