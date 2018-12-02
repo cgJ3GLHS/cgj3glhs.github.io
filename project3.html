@@ -22,7 +22,239 @@
        </ul>
      </div>
      <br><br><br>
-     <h2>2018-09-02</h2>
-     <p>Project 3 content here</p>
+     
+     <h2>2108-11-28</h2>
+     
+     <p>Pushing forward today, the next item is the MCR or "Master Control Reset".  An interesting thing they talk about is the concept comes from electrical safety lockouts that allow you to disable a piece of a system while allowing the rest of the system to continue running.  Relating it to things that I'm familiar with, it mostly seems like a big if statement.  When the input values evaluate to true, the rungs between the startfence and endfence are evaluated.  When the input is false, those rungs are skipped, and their outputs are often set to false, though that can vary by manufacturer.  Gotta love lack of standardization!  The equivalent thing from my world would be an if statement, where a condition gets evaluated and the code between a set of boundaries (usually brackets) gets executed or skipped based on the true/false of the condition.</p>
+     
+     <p>It's interesting how these concepts developing from different communities are essentially the same thing, but have this very different conceptual approach.  In programming I think of an if statement as something that normally wouldn't happen unless some special conditions are met, while these electrical engineers think of it as something that is normally on but needs a way to safely to be turned off for maintenance.  It's just an inside out view of same thing really, but in the different environments we build up our approach to it from different ends.</p>
+     
+     <p>Shift registers are the next item, which reminds me a little of data structures like a stack, queue and so on, even though they are used a little differently.  The shift registers push stuff on like a stack but any bit can be read at any time not just as a pop from the top.  Also the bits fall off when they get pushed past the end.  It sounds like these are mostly used for having some piece of information follow an instance through the steps of a process.  The next is a move statement that moves some data from one address to another.  The whole thing is really reminding me of assembly language.  While all these things reference a diagram-based interface I have to wonder if there is a text-based form.</p>
+     
+     <p>Even though we're reaching the end of the course I think I'm going to keep going on this PLC topic, because it has so many real-world uses.  Working with these would make a nice job.</p>
+     
+     <h2>2108-11-27</h2>
+     
+     <p>For the community of practice on this project I decided to visit the ATX Hackerspace.  While there may not be a PLC-specific group meeting there, from their website it seems they do a lot of different things that are sort of in the same neighborhood.  They have open house events on Tuesday evenings, so I went to one of those.  I had often wondered about where they were located and it turns out to be in an office park just across the street from a taco place I used to visit frequently.  Very convenient!</p>
+     
+     <p>It was just getting dark as I drove down there and it took me a while to find which building where it was located.  Snaking back and forth between the rows of buildings, I examined each one for a sign, which some had and some didn't.  Most had what looked like an entry door on the front and loading docks at the back, and were dark and deserted, since it was after 6pm.  The few that still had cars were more obviously businesses with people working late.  When I reached the end of the buildings without finding the location, I exited to the street and turned in to the office park next door, thinking maybe it was in this different one.</p>
+     
+     <p>Aside from some differences to the routing of the parking lot around the buildings, this office park was the same, and I snaked around it looking for signs of life.  Aside from a delivery truck backing up to a loading dock and an open bay door with what looked like an auto mechanic shop with a half-taken-apart car inside it was pretty deserted.  On the second run through I noticed some signs low down in the bushes that would have been more visible in the daylight, but were hidden in the dark, except when my headlights swept across them.  Going through and examining each of these I finally found the one with my destination.  It was the place I had assumed to be an auto mechanic, so I parked and headed that way.</p>
+     
+     <p>The doors there had signs directing to the other side of the building.  On that side it was pretty dark, but there were two doors, one that looked like it had some light on inside.  That one however was locked, but the dark visitor's entry across from it was unlocked so I pulled it open and went inside where I found the entry lobby, lights off with various projects strewn about on display.  Deeper inside were some conference rooms that were lit up with a couple of people here and there.  One was also waiting for the tour and they were talking to another who just happened to be there.  We found the lobby light switch and also got news that the person who usually does the open house stuff wasn't going to be there 'till 8.  The other guy went ahead and left, not wanting to wait around that long (I think he had been waiting all the time that I was driving around looking for the place).  Since I had just gotten there I decided to stay a bit to see if anybody showed up.  After puttering around the lobby looking at all the different projects on display, one of the people who was working in there came out to go ahead and give me a tour so I wouldn't have to wait around.  We talked PLCs for a little bit, it turns out he sometimes encountered them in his job so he'd dealt with them before.</p>
+     
+     <p>In the first room was somebody's aquaponics project along with a bunch of 3d printers.  Off to the side was an electronics room with workbenches and shelves stacked with bins of tiny parts.  Down the hall from that were some laser cutters and a door marked as being for a "bio lab" that we didn't look inside.  The general atmosphere of the place was one of barely controlled chaos with lots of different parts and projects stacked haphazardly around.  Stuck on bulliten boards and various machines were fliers urging members to vote some person to the space's leadership.  My tour guide talked about some of his projects and interests, efforts to clean the space up to get rid of some of the clutter, and how the laser cutter was the center of some kind of dispute.</p>
+     
+     <p>It was interesting to me to see these aspects of it because part of the reason that the whole space exists is to have a communal sharing of tools that people either can't afford individually or don't have the space for on their own property.  While that communal aspect can be beneficial it also comes with a lot of governance overhead where all sorts of things have to be decided, from what big equipment should be purchased, to where it goes, to who cleans up after the people who don't, and just how all that sort of stuff gets managed.</p>
+     
+     <p>Beyond that was the big workroom with lots of tables, and some CNC routers which that was really interesting to compare with the 3d printing we did here at school.  They also had an automotive area, a welding area and a machining area which had some really cool equipment including some kind of a press thing that looked like it was 100 years old, a giant hunk of metal.  Up above that was a loft for small-tool crafting projects such as leatherworking, sewing, etc.  Also there were a couple of dogs wandering around that stopped to say hello.</p>
+     
+     <p>While I did not expect it to be a major PLC community, it was still interesting to see something of how this group of people interacts, what they get out of it and some of the issues that make it difficult.  While their membership is a little too pricy to me ($75/month) I can see where somebody might find value in that environment.</p>
+     
+     <h2>2018-11-14</h2>
+     
+     <p>Today has many fewer distractions, as I seem to be the only one here!  It makes sense that if people are just working on their computers that they'd want a more comfortable environment, but since I had to come down to campus today anyway I figure might as well make use of the room.  Besides, classes come out to something around $100 per session so I may as well get my money's worth in use of the facility.</p>
+     
+     <p>I started the day out catching up on my journaling and peer reviews.  I had put off the papers from last time because it feels socially awkward to read somebody's paper while they're sitting there in the room.  It took me a while to read through them and I never really know what to write about them either.  My comments are usually to pull out the points from the paper that had the most value to me and say good job on those.  Criticism is harder because writing is something I struggle with, it takes me a long time to write anything so it feels like really I should have some better foundation to stand on for saying anything negative.</p>
+     
+     <p>Anyhow with that done, back to ladder logic!  I have the book today but I think I'll continue with that web site.  The book has a chapter covering the same stuff so what I'll do is finish my foundation from that page, then go back over the chapter in the book to see if there are gaps that it fills in.</p>
+     
+     <p>Right away, I found myself using a hybrid of the book and website.  For the very first topic, the "one-shot" I had to supplement what the webpage had with information from the book.  This was because I wasn't really following how the one-shot component linked to the triggering component.  The book on the other hand first described how a one-shot is built from more fundamental parts and then only in the last paragraph mentioned that most PLC makers will build in a one-shot instruction.  Reading back through the web page again I see now that the how-to-build info was there but more as a side note in a middle paragraph saying if you don't have one you can do it like this.  Between the two I feel like I have a good idea of what it does, so next is to go through the example.</p>
+     
+     <p>Part of my trouble following the example was having a good text notation for stepping through the logic.  In my first attempt I was trying to write the memory values in the same place as the logic gates but that got confusing.  Instead I think I need to have each logic rung evaluation on a line and then track the state of the memory values over on the side.  I should ask somebody if there is any standard notation for describing the state while stepping through the rungs.</p>
+     
+     <p>Below is the example stepped through in the notation I finally came up with.  I abbreviated the names of the memory locations and put the starting memory state before the logic of each rung.  Then I evaluated that rung's logic and updated the memory on the line for the next rung. I actually had to go through 6 scans through the example to get the full cycle.  On the site they only listed three, assuming you had some knowledge about the intermediate states but spelling out each one helped me.</p>
+     
+     <p>This is the ladder diagram of from the example.</p>
+     <img src="http://www.plcs.net/difulad.gif"></img>
+     
+     <pre><code>
+
+Memory Location names:
+0000=0 # input (a momentary switch)
+1000=1 # one-shot state
+1001=2 # previous output state (i wonder is this one necessary...?
+0500=3 # output (a light)
+
+Mem  Rung Logic of rung
+0123 Rn   AvB=>C
+
+===============================================================================
+Start Input: button is pushed, 0000=1
+
+Scan 1:
+1000 R0 NO0000 ^ OS1000
+        T        T
+        
+1100 R1 (NO1000 v NO1001) ^ (NC1001 v NC1000) => OUT1001
+         T        F          T        F          T
+
+1110 R2 NO1001 => OUT0500
+        T         T
+
+1111 Final State
+
+===============================================================================
+# no inputs but the one-shot turns itself off in this scan
+
+Scan 2:
+1111 R0 NO0000 ^ OS1000
+        T        F
+        
+1011 R1 (NO1000 v NO1001) ^ (NC1001 v NC1000) => OUT1001
+         F        T          F        T           T
+
+1011 R2 NO1001 => OUT0500
+        T         T
+
+1011 Final State
+        
+
+===============================================================================
+Input: button is released 0000=0
+
+Scan 3:
+0011 R0 NO0000 ^ OS1000
+        F        F
+        
+0011 R1 (NO1000 v NO1001) ^ (NC1001 v NC1000) => OUT1001
+         F        T          F        T           T
+
+0011 R2 NO1001 => OUT0500
+        T         T
+
+0011 Final State
+
+
+===============================================================================
+Input: button is pushed again 0000=1  one-shot turns on in response to the push
+
+Scan 4:
+1011 R0 NO0000 ^ OS1000
+        T        T    
+        
+1111 R1 (NO1000 v NO1001) ^ (NC1001 v NC1000) => OUT1001
+         T        T          F        F          F
+
+1101 R2 NO1001 => OUT0500
+        F         F
+        
+1100    Final State
+
+
+===============================================================================
+# no input change, one-shot turns itself off this scan
+
+Scan 5:
+1100 R0 NO0000 ^ OS1000
+        T        F    
+        
+1000 R1 (NO1000 v NO1001) ^ (NC1001 v NC1000) => OUT1001
+         F        F          T        T          F
+
+1000 R2 NO1001 => OUT0500
+        F         F
+        
+1000 Final State
+
+
+===============================================================================
+Input: Button is released 0000=0
+
+Scan 6:
+0000 R0 NO0000 ^ OS1000
+        F        F    
+        
+0000 R1 (NO1000 v NO1001) ^ (NC1001 v NC1000) => OUT1001
+         F        F          T        T          F
+
+0000 R2 NO1001 => OUT0500
+        F         F
+        
+0000 Final State
+
+That brings us back to the original state before the button was pressed.
+     </code></pre>
+     
+     <p>Essentially what all that is doing is turning something on and off using the same button.  Seems like a lot for such a simple thing!  It seems as though the job of the one-shot in this case was to act as a filter, ensuring that a long press of the button did not spill over into multiple cycles.</p>
+     
+     <p>I think that figuring out this notation is going to help me a lot when stepping through other examples because it will give me a standard way to approach and track the state of things.  There may be some conditions that it does not account for that I will discover later but it seems pretty good for now.  That will be interesting to see how it differs from whatever sort of standard notation people actually use.</p>
+     
+     <p>It feels like I only learned one component today but I think the notation investment will help the other future ones go faster.</p>
+     
+     <p>When reading the other journals I found myself wanting to know more about the thing they were learning, that is why I'm putting in more detail as I go this time instead of just a naming summary of the things I learned about at the end of the day.  What I'm finding though is that by spending more time putting information in this journal I am taking less notes outside of it.  Before my strategy was to take the notes outside and then summarize key things into here.  Is this better?  Hopefully it makes for a more interesting read and does not feel too chaotic.</p>
+     
+     <h2>2018-11-07</h2>
+     <p></p>
+     
+     <p>Today I wanted to focus in on the ladder logic part of things, to get an better idea of what all the different code components are, how to put them together and what the flow is through the overall logic diagram.</p>
+     
+     <p>One sort of meta-thing I'm finding interesting is the balance between distraction and attention in this community setting.  On one hand the other stuff going on can be interesting and I end up learning about new things from all the activity going on around, but on the other hand it can go to the point where I'm not at all focusing on the thing in front of me and suddenly realize I need to drag my focus back if I'm going to get anywhere.</p>
+     
+     <p>Unfortunately I left the textbook at home today, so today I'm looking through the online resources.  I'm really liking the plcs.net site.  The design of this site is really great, straight out of the 90s back when web sites were made by regular people to share real information as opposed to the contentless javascript-laden marketing monstrosities that pollute the web today. (Yeah, I know, I'm an old crumudgeon.)</p>
+     
+     <p>Anyway, on to the material.  The basics of it seem pretty simple, boolean logic and turning things on and off.  The latching part stepped things up a little bit, where they take those basic pieces and start building them into more clever things.  Made it down through the timers by the time my time was up.</p>
+     
+     <p>One thing that caught my attention is the vocabulary.  This PLC ladder logic grew from the electrical engineering field, and they use a different kind of vocabulary to talk about concepts that we would call other things in computer science.  Even within the material they have several different terms to describe the same thing and understanding this stuff isn't so much about learning radically different concepts as overlaying this new vocabulary over my existing mental concepts.  It's not all just a conceptual repeat though, this is much more down in the detail whereas in CS we tend to operate at a more abstracted layer so there are a lot of little intermediate bits and pieces to learn about.</p>
+     
+     <p>After looking into the running on hardware aspects of this I think I need to narrow my goals a bit and focus on just learning components of the ladder logic and how they fit together.  From what I read it is possible to run this software on a RasPi and do i/o via the pins, but I'd really prefer to spend my time </p>
+     
+     <h2>2018-10-31</h2>
+     
+     <p>To start things off I read through the first couple of chapters in the PLC book to get a broad idea of the landscape.  They told about the background and history of PLCs, how they evolved from relays, how ladder logic diagrams developed from the relay diagrams, and the different types of PLCs that are avaliable.</p>
+     
+     <p>In parallel with the reading I set up a VM to use with the OpenPLC software.  I don't know much about this software but I hope to set it up and use the simulated environment to work through some tutorials. The software comes in three parts.  First is a runtime environmant for running the PLC programs.  This piece essentially acts as the PLC.  From what I'm reading this can be run on a regular PC, as well as smaller sorts of hardware like the Raspberry PI.  The second part is an editor for writing the programs and displaying the ladder logic diagrams.  The final part called SCADABR is for building user interfaces to the underlying PLC runtime environment.</p>
+     
+     <p>Once I got the editor and runtime installed, I put the book aside to get a feel for what is going on with the software.  Following the steps of this small tutorial <a href="http://www.openplcproject.com/reference-your-first-project">http://www.openplcproject.com/reference-your-first-project</a>.  Using that helped guide me through a lot of the setup process for a project which I would likely not have figured out on my own to get to a place where I could even get started.  After completing it though, it felt like I still did not have a good feeling for what all the parts/building blocks were that I could use for designing my own project, or the ways that the flow of the program works in ladder logic.</p>
+     
+     <p>Next was the setup of the runtime environment and the process for loading this little hello world program into it.  The interface to the RT is web-based so loading/running the file was pretty simple but the web interface doesn't offer much in the way of looking at the status of things other than just whether it is running or not running.  There is a Monitoring tab, but that page says only "This feature is not avaliable yet, check back later..." so it seems that aspect is still under construction.  I'll need to research more to find if there is any way to look at the status of running code without actually interfacing with external hardware.</p>
+     
+     <table border="1">
+      <th>Item</th>
+      <th>Description</th>
+    <tr>
+      <td>Goals</td>
+      <td>Learn some basics of programming PLCs (Programmable Logic Controllers).  I'd like to write some program and run it in either a real or simulated PLC.</td>
+    </tr>
+    <tr>
+      <td>Materials</td>
+      <td>
+        <ul>
+          <p>Here is a list of the books, papers, and webpages that I have found to look useful for this topic.</p>
+          <li>textbook</li>
+          <li>manual</li>
+          <li>The OpenPLC Project <a href="http://www.openplcproject.com/">http://www.openplcproject.com/</a></li>
+          <li>http://www.plcs.net/contents.shtml</li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Activities</td>
+      <td>Activities will start with finding descriptions of different types of joints from different sources and compiling a list of the main types along with some sketches.  Next I would like to create models of these various joints using small bamboo pieces.</td>
+    </tr>
+    <tr>
+      <td>Offline Learning Communities</td>
+      <td>
+        <p>For the offline community I'm going to attend one of the open house days at ATX Hackerspace <a href="https://atxhs.org/">https://atxhs.org/</a> I'm not sure if anybody there deals with PLCs at all but they work with a lot of different unusual hardware so there will likely be some relevant experience.  </p>
+      </td>
+    </tr>
+    <tr>
+      <td>Online Learning Communities</td>
+      <td>
+        <ul>
+          <li>OpenPLC forum<a href="https://openplc.discussion.community/">https://openplc.discussion.community/</a></li>
+          <li>
+            <p></p>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    </table>
   </body>
 </html>
